@@ -1,0 +1,27 @@
+#Latest{
+    .cards{
+
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        padding: 5vh 0;
+        grid-template-columns: repeat(4,1fr);
+        gap: 5vh;
+        .card{
+            backdrop-filter: blur(5px);
+            aspect-ratio: 1/1;
+            width: 20vw;
+            display: grid;
+            justify-self: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 3px 3px 3px black;
+            img{
+            margin: auto;
+            padding: 1vh;
+            height: 20vw;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+#background{
+    #nav{
+        height: 6vh;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        border-bottom: 2px solid black;
+        z-index: 999;
+
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        align-items: center;
+        div{
+        }
+
+        span{
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-left: 2rem;
+
+            &:hover{
+                color: gray;
+                cursor: pointer;
+            }
+        }
+    }
+}

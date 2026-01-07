@@ -1,0 +1,25 @@
+#carousel{
+    margin-top: 10vh;
+    height: 50vh;
+    width: 80vw;
+    margin:  10vh  auto 10vh auto;
+    .slides{
+        height: inherit;
+        .slide{
+        height:inherit;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        position: relative;
+        overflow: hidden;
+            img{
+                height: 60vh;
+                position: absolute;
+                transition: .5s;
+                z-index: 999;
+            }
+        }
+    }
+}
+
+
