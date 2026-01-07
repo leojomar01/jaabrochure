@@ -7,7 +7,6 @@ import list from './list.json'
 
 function CarouselSection() {
 
-    const [controlledSwiper, setControlledSwiper] = useState(null);
   return (
     <div id='carousel'>
           <Swiper className='slides'
@@ -16,7 +15,6 @@ function CarouselSection() {
             loop={true}
             slidesPerView={1}
             autoplay={{delay:5300}}
-            controller={{ control: controlledSwiper }} 
             navigation
             pagination={{ clickable: true , type: 'bullets'}}
             onSwiper={(swiper) => console.log(swiper)}
