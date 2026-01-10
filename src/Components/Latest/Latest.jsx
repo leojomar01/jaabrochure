@@ -9,6 +9,7 @@ function Latest() {
         <div className="cards">
             {[...list].reverse().slice(0,15).map((item, index) => (
                 <div  className= 'card' key={index}>
+                  <div className="wrapper"></div>
                   <img src={item.link} alt="" />
                 </div>
             ))}

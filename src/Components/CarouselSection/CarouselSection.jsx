@@ -22,6 +22,7 @@ function CarouselSection() {
            
             {list.map((pic, index) => (
                  <SwiperSlide className='slide'>
+                    <div className='wrapper'></div>
                     <img src={pic.link} alt="" key={index} />
                     </SwiperSlide>
             ))}

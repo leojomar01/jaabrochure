@@ -1,9 +1,33 @@
 #polo,#jersey{
-    margin-top: 10vh;
+    margin-top: 3vh;
+    position: relative;
+    
+
+    .modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 5vh;
+        width: 100vw;
+        z-index: 999;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        cursor: pointer;
+        .wrapper{
+            height: 100%;
+            width: 100%;
+            z-index: 999;
+            position: absolute;
+        }
+        img{
+            height: 90vh;
+            cursor: zoom-out;
+        }
+    }
 
     .filter_title{
         height: 8vh;
-        background-color: white;
+        background-color: rgba(0, 0, 0, 0.1);
         font-size: 1.6rem;
         display: grid;
         justify-content: center;
@@ -20,17 +44,26 @@
         .card{
             backdrop-filter: blur(5px);
             aspect-ratio: 1/1;
-            width: 20vw;
+            width: 18vw;
             display: grid;
             justify-self: center;
             align-items: center;
             border-radius: 10px;
-            overflow: hidden;
+            // overflow: hidden;
+            padding: 1vw;
             box-shadow: 3px 3px 3px black;
+            .wrapper{
+                height: 100%;
+                width: 100%;
+                z-index: 999;
+                position: absolute;
+                cursor: zoom-in;
+            }
+       
             img{
-            margin: auto;
-            padding: 1vh;
-            height: 20vw;
+                margin: auto;
+                padding: 1vh;
+                height: 17vw;
             }
         }
     }
