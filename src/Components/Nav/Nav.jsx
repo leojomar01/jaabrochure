@@ -10,6 +10,7 @@ function Nav() {
             </div>
             
             <div className="section">
+                <span><Link to={'/'}>Home</Link></span>
                 <span><Link to={'/jersey'}>Jersey</Link></span>
                 <span><Link to={'/poloshirt'}>Polo Shirt</Link></span>
                 <span><Link to={'/longesleeve'}>Long Sleeve</Link></span>

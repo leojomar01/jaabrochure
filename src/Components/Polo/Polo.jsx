@@ -4,7 +4,7 @@ import "./Polo.scss";
 
 function Polo() {
   const [selectedColor, setSelectedColor] = useState("All");
-  const [modalImage, setModalImage] = useState(null); // modal state
+  const [currentIndex, setCurrentIndex] = useState(null); // modal index
 
   const poloList = list.filter(item => item.category === "polo");
 
@@ -18,21 +18,42 @@ function Polo() {
       ? poloList
       : poloList.filter(item => item.color.includes(selectedColor));
 
-  const showModal = (image) => {
-    setModalImage(image);
+  const showModal = (index) => {
+    setCurrentIndex(index);
   };
 
   const closeModal = () => {
-    setModalImage(null);
+    setCurrentIndex(null);
+  };
+
+  const nextImage = () => {
+    setCurrentIndex((prev) =>
+      prev === filteredList.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? filteredList.length - 1 : prev - 1
+    );
   };
 
   return (
     <div id="polo">
 
-      {modalImage && (
-        <div className="modal" onClick={closeModal}>
-          <div className="wrapper"></div>
-          <img src={modalImage} alt="Polo preview" />
+      {currentIndex !== null && (
+        <div className="modal">
+          <div className="wrapper" onClick={closeModal}></div>
+
+          <div className="prevBtn btn" onClick={prevImage}>❮</div>
+
+          <img
+            src={filteredList[currentIndex].link}
+            alt="Polo preview"
+          />
+          <div className="nextBtn btn" onClick={nextImage}>❯</div>
+
+          <span className="closeBtn" onClick={closeModal}>×</span>
         </div>
       )}
 
@@ -51,18 +72,15 @@ function Polo() {
       </div>
 
       <div className="cards">
-        {[...filteredList]
-          // .slice(0, 1)
-          .reverse()
-          .map((item, index) => (
-            <div className="card" key={index}>
-              <div
-                className="wrapper modalBtn"
-                onClick={() => showModal(item.link)}
-              />
-              <img src={item.link} alt={item.color.join(", ")} />
-            </div>
-          ))}
+        {[...filteredList].map((item, index) => (
+          <div className="card" key={index}>
+            <div
+              className="wrapper modalBtn"
+              onClick={() => showModal(index)}
+            />
+            <img src={item.link} alt={item.color.join(", ")} />
+          </div>
+        ))}
       </div>
     </div>
   );

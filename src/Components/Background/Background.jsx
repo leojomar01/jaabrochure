@@ -7,7 +7,6 @@ import CarouselSection from '../CarouselSection/CarouselSection'
 function Background() {
   return (
     <div id='background'>
-      
         <CarouselSection/>
         <Latest/>
     </div>

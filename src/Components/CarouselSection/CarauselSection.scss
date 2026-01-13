@@ -17,10 +17,13 @@
                 z-index: 99;
         }
             img{
-                width: 90vw;
+                // width: 90vw;
+                height: 95%;
                 position: absolute;
                 transition: .5s;
                 z-index: 95;
+                position: absolute;
+                bottom: 0;
             }
         }
     }
